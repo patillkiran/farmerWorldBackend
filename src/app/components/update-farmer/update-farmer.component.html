@@ -1,0 +1,129 @@
+<app-header></app-header>
+<div class="breadCrumbs">
+    <div class="container">
+        <span class="cursorPointer" routerLink="/farmers"><img src="./../../../assets/images/home.png" alt="home" /></span>
+        <span class=""><img src="./../../../assets/images/right-arrow.png" /></span>
+        <span>Update Farmer</span>
+    </div>
+</div>
+
+<div class="container pt-4 pb-4">
+    <form [formGroup]="angForm" novalidate>
+        <div class="row">
+            <div class="col-lg-6 col-md-12 col-sm-12 pb-3">
+                <div class="form-group">
+                    <label class="pb-2">Name: <span class="red">*</span></label>
+                    <input class="form-control" formControlName="name" type="text">
+                </div>
+                <div *ngIf="angForm.controls['name'].invalid && (angForm.controls['name'].dirty || angForm.controls['name'].touched)" class="alert alert-danger">
+                    <div *ngIf="angForm.controls['name'].errors.required">
+                    Name is required.
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12 col-sm-12 pb-3">
+                <div class="form-group">
+                    <label class="pb-2">Age: <span class="red">*</span></label>
+                    <input class="form-control" formControlName="age" type="number">
+                </div>
+                <div *ngIf="angForm.controls['age'].invalid && (angForm.controls['age'].dirty || angForm.controls['age'].touched)" class="alert alert-danger">
+                    <div *ngIf="angForm.controls['age'].errors.required">
+                    Age is required.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 col-md-12 col-sm-12 pb-3">
+                <div class="form-group">
+                    <label class="pb-2">Total Field Area in acre: <span class="red">*</span></label>
+                    <input class="form-control" formControlName="totalFieldArea" type="number">
+                </div>
+                <div *ngIf="angForm.controls['totalFieldArea'].invalid && (angForm.controls['totalFieldArea'].dirty || angForm.controls['totalFieldArea'].touched)" class="alert alert-danger">
+                    <div *ngIf="angForm.controls['totalFieldArea'].errors.required">
+                    Field area is required.
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12 col-sm-12 pb-3">
+                <div class="form-group">
+                    <label class="pb-2">Main Crop: <span class="red">*</span></label>
+                    <input class="form-control" formControlName="crop" type="text">
+                </div>
+                <div *ngIf="angForm.controls['crop'].invalid && (angForm.controls['crop'].dirty || angForm.controls['crop'].touched)" class="alert alert-danger">
+                    <div *ngIf="angForm.controls['crop'].errors.required">
+                    Crop is required.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 col-md-12 col-sm-12 pb-3">
+                <div class="form-group">
+                    <label class="pb-2">Upload Photo: (max file size 20kb)</label>
+                    <input class="form-control" (change)="checkFile($event)" formControlName="photo" type="file">
+                </div>
+            </div>            
+            <div class="col-lg-6 col-md-12 col-sm-12 pb-3">
+                <div class="form-group">
+                    <label class="pb-2">Education Level:</label>
+                    <!-- <input class="form-control" formControlName="gnder" type="text"> -->
+                    <select class="form-control" formControlName="educationLevel">
+                        <option value="none">None</option>
+                        <option value="primary">Primary</option>
+                        <option value="secondary">Secondary</option>
+                        <option value="bachelors">Bachelors</option>
+                        <option value="masters">Masters</option>
+                    </select> 
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 col-md-12 col-sm-12 pb-3">
+                <div class="form-group">
+                    <label class="pb-2">Gender:</label>
+                    <!-- <input class="form-control" formControlName="gnder" type="text"> -->
+                    <select class="form-control" formControlName="gender">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select> 
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12 col-sm-12 pb-3">
+                <div class="form-group">
+                    <label class="pb-2">Marital Status:</label>
+                    <select class="form-control" formControlName="married">
+                        <option value="married">Married</option>
+                        <option value="single">Single</option>
+                        <option value="widowed">Widowed</option>
+                        <option value="separated">Separated</option>
+                    </select> 
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 col-md-12 col-sm-12 pb-3">
+                <div class="form-group">
+                    <label class="pb-2">Family Count:</label>
+                    <input class="form-control" formControlName="familyCount" type="number">
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12 col-sm-12 pb-3">
+                <div class="form-group">
+                    <label class="pb-2">No of Children:</label>
+                    <input class="form-control" formControlName="numberOfChildren" type="number">
+                </div>
+            </div>
+        </div>
+        <div class="pb-4 mt-3">
+            <button type="submit" (click)="updateFarmer();"
+                [disabled]="angForm.pristine || angForm.invalid" class="btn btn-success">
+                Update Farmer
+            </button>
+        </div>
+  </form>
+  <!-- <br />
+  <p>Form value: {{ angForm.value | json }}</p>
+  <p>Form status: {{ angForm.status | json }}</p> -->
+</div>

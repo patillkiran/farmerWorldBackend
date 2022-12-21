@@ -1,0 +1,61 @@
+<app-header></app-header>
+<div class="breadCrumbs">
+    <div class="container">
+        <span class="cursorPointer" routerLink="/farmers"><img src="./../../../assets/images/home.png" alt="home" /></span>
+        <span class=""><img src="./../../../assets/images/right-arrow.png" /></span>
+        <span>View Farmer</span>
+    </div>
+</div>
+<div class="container pt-4 pb-4">
+    <div class="row">
+        <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="farmer-photo">
+                <div *ngIf="farmer.photo && farmer.photo != ''">
+                    <img [src]="farmer.photo" [alt]="farmer.name">
+                </div>
+                <div *ngIf="!farmer.photo">
+                    <img src="./../../../assets/images/blank-avatar.png" [alt]="farmer.name">
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-9 col-md-6 col-sm-6">
+            <div class="row pb-3">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <span class="font-big">{{farmer.name}}</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-12 col-sm-12 pb-3">
+                    <span class="">Age: {{farmer.age}}</span>
+                </div>
+                <div class="col-lg-6 col-md-12 col-sm-12 pb-3">
+                    <span class="">Gender: {{farmer.gender}}</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6  col-md-12 col-sm-12 pb-3">
+                    <span class="">Field: {{farmer.totalFieldArea}} Acre</span>
+                </div>
+                <div class="col-lg-6  col-md-12 col-sm-12 pb-3">
+                    <span class="">Crop: {{farmer.crop}}</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6  col-md-12 col-sm-12 pb-3">
+                    <span class="">Family Count: {{farmer.familyCount}}</span>
+                </div>
+                <div class="col-lg-6  col-md-12 col-sm-12 pb-3">
+                    <span class="">No of Chilredn: {{farmer.numberOfChildren}}</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6  col-md-12 col-sm-12 pb-3">
+                    <span class="">Education Level: {{farmer.educationLevel}}</span>
+                </div>
+                <div class="col-lg-6 col-md-12 col-sm-12 pb-3">
+                    <span class="">Date of Join: {{farmer.createdDate | date: 'dd-MMM-yyyy'}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

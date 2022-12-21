@@ -1,0 +1,68 @@
+<app-header></app-header>
+
+<div class="container pt-4 pb-4">
+    <div class="row pt-2 pb-4">
+        <div class="col-6">
+            <span class="font-big">Farmer List</span>
+        </div>
+        <div class="col-6 text-end">
+            <button class="btn btn-success" title="Add New Farmer" (click)="addNewFarmer()">Add New Farmer</button>
+        </div>
+    </div>
+    <!-- <table class="table table-hover table-one-line" role="grid">
+        <thead>
+            <tr role="row">
+                <th style="width:30%">Farmer Name</th>
+                <th style="width:15%">Farmer Age</th>
+                <th style="width:15%">Gender</th>
+                <th style="width:15%">Field Area</th>
+                <th style="width:25%">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let farmer of farmers">
+                <td>{{farmer.name}}</td>
+                <td>{{farmer.age}}</td>
+                <td>{{farmer.gender}}</td>
+                <td>{{farmer.totalFieldArea}} Acre</td>
+                <td>
+                    <a (click)="editFarmer(farmer._id)" class="action-button">
+                        <img src="./../../../assets/images/edit.png" alt="Edit" />
+                    </a>
+                    <a (click)="editFarmer(farmer._id)" class="action-button">
+                        <img src="./../../../assets/images/eye.png" alt="Edit" />
+                    </a>
+                    <a (click)="editFarmer(farmer._id)" class="action-button">
+                        <img src="./../../../assets/images/trash.png" alt="Edit" />
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table> -->
+    <div class="row">
+        <div class="col-lg-3 col-md-4 col-sm-6 pb-3" *ngFor="let farmer of farmers">
+            <div class="farmer-card">
+                <div class="farmer-photo">
+                    <div *ngIf="farmer.photo && farmer.photo != ''">
+                        <img [src]="farmer.photo" [alt]="farmer.name">
+                    </div>
+                    <div *ngIf="!farmer.photo">
+                        <img src="./../../../assets/images/blank-avatar.png" [alt]="farmer.name">
+                    </div>
+                </div>
+                <div class="farmer-name">{{farmer.name}}</div>
+                <div class="farmer-icons">
+                    <a (click)="editFarmer(farmer._id)" class="action-button cursorPointer">
+                        <img src="./../../../assets/images/draw.png" alt="Edit" />
+                    </a>
+                    <a (click)="viewFarmer(farmer._id)" class="action-button cursorPointer">
+                        <img src="./../../../assets/images/eye.png" alt="Edit" />
+                    </a>
+                    <a (click)="deleteFarmer(farmer._id)" class="action-button cursorPointer">
+                        <img src="./../../../assets/images/trash.png" alt="Edit" />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

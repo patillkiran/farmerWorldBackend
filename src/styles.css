@@ -1,0 +1,101 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+    background-color:#d9f3e0 !important;
+    font-family: sans-serif;
+  }
+  header {
+      transition: all 0.3s ease-in-out;
+      /* box-shadow: 0 1px 6px 0 rgba(214, 220, 239, 1); */
+      top: 0px;
+      background-color: #fff;
+      position: sticky;
+      z-index: 40;
+      height: auto;
+  }
+  .logo {
+      padding: 7px 0px;
+  }
+  .logo a {
+      text-transform: capitalize;
+      color: #fff;
+      font-size: 35px;
+      font-weight: 500;
+      text-decoration: none;
+  }
+  .welcome-text {
+    padding: 21px 0px;
+    text-align: right;
+    color: #454545;;
+  }
+  .font-big {
+      font-size: 24px;
+  }
+  .action-button {
+      display: inline-block;
+      padding-right: 10px;
+  }
+  .farmer-card {
+      background: #4ddbc4;
+      border-radius:4px;
+      width:90%;
+      margin: 0 auto;
+      padding: 25px 15px;
+      box-sizing: border-box;
+  }
+  .farmer-photo {
+      text-align: center;
+      min-height: 128px;
+      position: relative;
+  }
+  .farmer-photo img {
+      max-height: 128px;
+      max-width: 80%;
+      border-radius: 40px;
+      position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+  }
+.farmer-name {
+    font-size: 20px;
+    text-align: center;
+    padding: 10px 0px;
+}
+.farmer-icons {
+    text-align: center;
+    padding: 10px 0px 0px;
+}
+.farmer-icons a {
+    display: inline-block;
+    padding: 3px 6px;
+    background: rgb(208, 236, 235);
+    border-radius: 2px;
+    margin: 0px 4px;
+}
+.cursorPointer{
+    cursor: pointer;
+}
+.breadCrumbs {
+    background: #585959;
+    padding: 5px 0px;
+}
+.breadCrumbs span {
+    display: inline-block;
+    padding-right:20px;
+    color:#fff;
+}
+.breadCrumbs span img {
+    width:14px;
+}
+.red {
+    color:#c20303
+}
+.footer {
+    padding: 5px 20px;
+    border-top: 1px solid #ccc;
+    text-align: right;
+    font-size:12px;
+}
+
